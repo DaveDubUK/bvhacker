@@ -1,0 +1,502 @@
+/*
+	bvhacker - a program for animation previewing and editing
+
+	bvhacker Copyright © 2006 to 2014 David Wooldridge  
+
+		dave@davedub.co.uk
+		http://davedub.co.uk/
+
+	This file is part of bvhacker.
+
+    bvhacker is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    bvhacker is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with bvhacker.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United Kingdom) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)\r\n"
+    "LANGUAGE 9, 2\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\bvhTweak.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAINFRAME           ICON                    "res\\BVHTweaker.ico"
+IDI_ICON1               ICON                    "res\\BVHTweaker.ico"
+IDI_FWD_ICON            ICON                    "res\\Fwd_button.ico"
+IDI_PAUSE_ICON          ICON                    "res\\Pause_button.ico"
+IDI_PLAY_ICON           ICON                    "res\\Play_button.ico"
+IDI_REV_ICON            ICON                    "res\\Rev_button.ico"
+IDI_STOP_ICON           ICON                    "res\\Stop_button.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "davedub's bvhacker"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDI_MAINFRAME,IDC_STATIC,11,16,20,20
+    LTEXT           "bvhacker Version 1.9.0.0",IDC_STATIC,41,15,119,8,SS_NOPREFIX
+    LTEXT           "Copyright © 2006 to 2013 D.Wooldridge",IDC_STATIC,41,27,178,8
+    DEFPUSHBUTTON   "OK",IDOK,178,16,50,16,WS_GROUP
+END
+
+IDD_BVHTWEAK_DIALOG DIALOGEX 0, 0, 680, 465
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_APPWINDOW
+CAPTION "davedub's bvhacker"
+MENU IDR_MAIN_MENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_OPENGL,"Static",SS_BLACKFRAME | SS_RIGHTJUST | SS_REALSIZEIMAGE | SS_SUNKEN | NOT WS_VISIBLE,193,7,294,403,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    GROUPBOX        "File Properties",IDC_STATIC,7,292,181,118
+    PUSHBUTTON      "Play",IDC_BUTTON3,292,434,22,17,BS_ICON | WS_GROUP
+    PUSHBUTTON      "Stop",IDC_BUTTON4,316,434,22,17,BS_ICON | WS_GROUP
+    PUSHBUTTON      "Fwd",IDC_STEP_FWD_BTN,364,434,22,17,BS_ICON | WS_GROUP
+    CONTROL         "",IDC_TIMELINE,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,7,411,664,15
+    PUSHBUTTON      "Rev",IDC_STEP_REV,340,434,22,17,BS_ICON | WS_GROUP
+    PUSHBUTTON      "Front",IDC_RESET_VIEW,503,197,37,21,BS_CENTER | BS_VCENTER
+    PUSHBUTTON      "Floor",IDC_GND_VIEW_BTN,543,197,37,21
+    CONTROL         "Hierarchy",IDC_BVH_SKELETON,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_SHOWSELALWAYS | TVS_NOTOOLTIPS | WS_BORDER | WS_HSCROLL | WS_GROUP | WS_TABSTOP,7,7,181,283
+    CONTROL         "",IDC_X_SLIDER,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,591,48,16,337
+    GROUPBOX        " Adjustments",IDC_ADJ_GROUP_BOX,492,3,180,408
+    CONTROL         "",IDC_Y_SLIDER,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,619,48,16,337
+    CONTROL         "",IDC_Z_SLIDER,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,647,48,16,337
+    PUSHBUTTON      "Mark out",IDC_TRIM_PT_R,541,435,39,16
+    PUSHBUTTON      "Mark in",IDC_TRIM_PT_L,501,435,39,16
+    LTEXT           "Joint Name",IDC_JOINT_LABEL,505,63,74,8,SS_WORDELLIPSIS
+    GROUPBOX        "",IDC_EDIT_CTRLS_SURROUND,7,424,180,35
+    LTEXT           "",IDC_FRAME_COUNT,19,435,163,19
+    LTEXT           "Slider range ±",IDC_RANGE_LABEL,500,372,45,11
+    EDITTEXT        IDC_SLIDER_RANGE,546,372,25,12,ES_RIGHT | ES_AUTOHSCROLL | ES_WANTRETURN | ES_NUMBER | NOT WS_BORDER
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ARROWKEYS,574,370,8,12
+    CONTROL         "Translation mode",IDC_OFF_SEL,"Button",BS_AUTORADIOBUTTON | BS_LEFTTEXT | BS_NOTIFY,502,17,71,10
+    CONTROL         "Rotation mode",IDC_ROT_SEL,"Button",BS_AUTORADIOBUTTON | BS_LEFTTEXT | BS_NOTIFY,503,32,70,10
+    PUSHBUTTON      "Crop",IDC_TRIM_BTN,581,435,39,16
+    LTEXT           "Frame time (mS)",IDC_FRAMERATE,19,389,52,8
+    EDITTEXT        IDC_FRAMERATE_EDIT,77,389,41,12,ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_BORDER,WS_EX_RIGHT
+    CONTROL         "",IDC_FRAMERATE_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ARROWKEYS,121,387,12,12
+    LTEXT           "No File Loaded",IDC_PROPS_PANE,19,307,160,72
+    GROUPBOX        "View",IDC_VIEW_SECTION_SURROUND,498,184,88,88
+    GROUPBOX        "Joint Properties",IDC_JOINT_PROPERTIES_SURROUND,498,49,87,131
+    LTEXT           "Rotation Order",IDC_CHANNEL_ORDER,505,128,76,8
+    LTEXT           "Hierarchy",IDC_HEIRARCHY,505,89,73,8
+    LTEXT           "Number of channels",IDC_NCHANNELS,505,102,73,8
+    LTEXT           "Parent",IDC_PARENT,505,76,73,8,SS_WORDELLIPSIS
+    LTEXT           "Offsets:",IDC_OFFSETS_LABEL,505,141,28,8
+    PUSHBUTTON      "Knit",IDC_TRIM_BTN2,621,435,39,16
+    PUSHBUTTON      "Set T",IDC_TRIM_BTN3,503,312,37,21
+    PUSHBUTTON      "½Sample",IDC_SL_NAMING_CLICKED,503,336,37,21
+    PUSHBUTTON      "Z",IDC_CLAMP_Z,648,389,16,14
+    PUSHBUTTON      "Y",IDC_CLAMP_Y,620,389,16,14
+    PUSHBUTTON      "X",IDC_CLAMP_X,592,389,16,14
+    LTEXT           "Clamp channel   (set to zero)",IDC_CLAMP_LABEL,500,389,57,17
+    PUSHBUTTON      "!Zero",IDC_NOT_ZERO_3,543,312,37,21
+    PUSHBUTTON      "Right",IDC_RIGHT_VIEW_BUTTON,503,220,37,21
+    PUSHBUTTON      "Left",IDC_LEFT_VIEW_BUTTON,543,220,37,21
+    PUSHBUTTON      "NoOffset",IDC_MOTIONBUILDER_FIX,503,288,37,21
+    GROUPBOX        "Shortcuts",IDC_HACKS_AND_TWEAKS,498,277,88,88
+    PUSHBUTTON      "XYZ",IDC_ZERO_BTN,549,389,36,14
+    GROUPBOX        "Loop",IDC_LOOP_GROUP_BOX,493,424,177,35
+    LTEXT           ":  ( fps )",IDC_FRAMERATE2,137,389,44,8
+    GROUPBOX        "",IDC_TRANS_CTRLS_GROUP_BOX,193,424,293,35
+    PUSHBUTTON      "Fix Loop",IDC_FIX_LOOP,543,336,37,21
+    PUSHBUTTON      "Center",IDC_CENTRE_BUTTON,543,288,37,21
+    DEFPUSHBUTTON   "MFCworkaround4OKbtn",IDC_HIDDEN,201,435,86,14,NOT WS_VISIBLE | NOT WS_TABSTOP
+    EDITTEXT        IDC_X_EDIT,585,32,29,12,ES_CENTER | ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_BORDER,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_Y_EDIT,613,32,29,12,ES_CENTER | ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_BORDER,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_Z_EDIT,641,32,29,12,ES_CENTER | ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_BORDER,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_OFFSETS_DISPX_E,535,141,45,12,ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_BORDER,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_OFFSETS_DISPY_E,535,153,45,12,ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_BORDER,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_OFFSETS_DISPZ_E,535,165,45,12,ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_BORDER,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_SPACER_BTN,335,438,8,8,NOT WS_VISIBLE
+    LTEXT           "Scale",IDC_SCALE_DISPLAY,505,115,70,8
+    CTEXT           "Adjustment Infomation",IDC_ADJUSTMENT_INFO,585,17,85,9
+    PUSHBUTTON      "Zoom In",IDC_ZOOM_IN,503,243,37,21
+    PUSHBUTTON      "Zoom Out",IDC_ZOOM_OUT,543,243,37,21
+END
+
+IDD_JOINT_NAME_DIALOG DIALOGEX 0, 0, 116, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New joint name"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,37,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,59,37,50,14
+    LTEXT           "Enter new joint name here",IDC_STATIC,7,7,102,11
+    EDITTEXT        IDC_NEW_JOINT_NAME,7,19,102,13
+END
+
+IDD_RESAMPLE_DIALOG DIALOGEX 0, 0, 151, 122
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Resample"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,15,93,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,82,93,50,14
+    CONTROL         "",IDC_NEW_FRAMERATE_SPINNER,"msctls_updown32",UDS_ARROWKEYS,61,69,11,14
+    EDITTEXT        IDC_NEW_FRAMETIME,15,69,47,14,ES_AUTOHSCROLL
+    LTEXT           "Frame time (mS)",IDC_STATIC,82,72,53,8
+    EDITTEXT        IDC_NEW_FRAME_RATE,15,31,47,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_NEW_FRAME_RATE_SPINNER,"msctls_updown32",UDS_ARROWKEYS,62,31,10,14
+    LTEXT           "Framerate (fps)",IDC_STATIC,82,34,52,8
+    EDITTEXT        IDC_NEW_ANIMATION_LENGTH,15,50,47,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_NEW_ANIM_LENGTH_SPINNER,"msctls_updown32",UDS_ARROWKEYS,62,50,10,14
+    LTEXT           "Total frames",IDC_STATIC,82,53,41,8
+    LTEXT           "Set a new frame time, frame rate or total number of frames",IDC_STATIC,15,7,117,21
+    DEFPUSHBUTTON   "hidden",IDC_HIDDEN_2,144,101,0,14,NOT WS_VISIBLE
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 118, 151
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "bvhacker - preferences"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,130,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,61,130,50,14
+    GROUPBOX        "Display",IDC_STATIC,7,3,103,67
+    GROUPBOX        "File",IDC_STATIC,7,72,104,54
+    COMBOBOX        IDC_FILE_VIEW_SELECT,13,105,91,52,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Set the default view for the load and save file dialogs",IDC_STATIC,14,83,90,19
+    CONTROL         "Use OpenGL Shading",IDC_SHADING_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,15,83,10
+    CONTROL         "Use Colour Display",IDC_COLOUR_DISPLAY_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,28,75,10
+    CONTROL         "Show Ground Plane",IDC_SHOW_GROUND_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,41,78,10
+    CONTROL         "Show Head Mesh",IDC_SHOW_HEAD_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,54,71,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,9,0,0
+ PRODUCTVERSION 1,9,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904e4"
+        BEGIN
+            VALUE "Comments", "Application for conversion, editing, tweaking and generally hacking up of bvh files"
+            VALUE "CompanyName", "davedub"
+            VALUE "FileDescription", "bvhacker - davedub's bvh file editor"
+            VALUE "FileVersion", "1.9.0.0"
+            VALUE "InternalName", "bvhacker.exe"
+            VALUE "LegalCopyright", "Copyright © 2006 to 2012  David Wooldridge.  All rights reserved."
+            VALUE "OriginalFilename", "bvhacker.exe"
+            VALUE "ProductName", "bvhacker"
+            VALUE "ProductVersion", "1.9.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x809, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_BVHTWEAK_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 671
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 458
+    END
+
+    IDD_JOINT_NAME_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 109
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_RESAMPLE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 144
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 115
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 111
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_JOINT_SUBMENU MENU
+BEGIN
+    POPUP " "
+    BEGIN
+        MENUITEM "Rename Joint",                ID_RENAME_JOINT
+        MENUITEM "Insert Joint",                ID_INSERT_JOINT
+        MENUITEM "Remove Joint",                ID_REMOVE_JOINT
+        MENUITEM "Remove Descendants ",         ID_DELETE_DESCENDANTS
+        MENUITEM "Zero Out Joint Rotation",     ID_ZEROOUT_JOINT
+        MENUITEM "Zero Out All Decendants",     ID_ZEROOUTALLDECENDANTS
+        MENUITEM "Merge with Parent",           ID_MERGEWITHPARENT
+    END
+END
+
+IDR_MAIN_MENU MENU
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Open                    Ctrl+O", ID_FILE_OPEN32777
+        MENUITEM "Save                     Ctrl+S", ID_FILE_SAVE32778
+        MENUITEM SEPARATOR
+        MENUITEM "Report",                      ID_FILE_REPORT
+        MENUITEM SEPARATOR
+        MENUITEM "Exit                      Ctrl+Q", ID_FILE_EXIT32784
+    END
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "Undo                     Ctrl+Z    ", ID_EDIT_UNDO32823
+        MENUITEM SEPARATOR
+        MENUITEM "Translation Mode         T",  ID_EDIT_TRANSLATIONMODE
+        MENUITEM "Rotation Mode             R", ID_EDIT_ROTATIONMODE
+        MENUITEM SEPARATOR
+        MENUITEM "Resample to ½ frames",        ID_HACKS_RESAMPLE
+        MENUITEM SEPARATOR
+        MENUITEM "Insert joint                Ins", ID_INSERT_JOINT
+        MENUITEM "Remove joint             Del", ID_REMOVE_JOINT
+        MENUITEM "Rename joint             F2", ID_RENAME_JOINT
+        MENUITEM SEPARATOR
+        MENUITEM "Scale up                Ctrl++", ID_EDIT_SCALEUP
+        MENUITEM "Scale down           Ctrl+ -", ID_EDIT_SCALEDOWN
+        MENUITEM SEPARATOR
+        MENUITEM "Preferences          Ctrl+P", ID_VIEW_OPTIONS
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "Front view                    F", ID_VIEW_FRONT
+        MENUITEM "Right view                    V", ID_VIEW_RIGHTVIEW
+        MENUITEM "Left view                      V", ID_VIEW_LEFTVIEW
+        MENUITEM "Floor level view            F", ID_VIEW_FLOORLEVELVIEW
+        MENUITEM SEPARATOR
+        MENUITEM "Zoom In                       +", ID_VIEW_ZOOMIN
+        MENUITEM "Zoom Out                     -", ID_VIEW_ZOOMOUT
+    END
+    POPUP "Prepare"
+    BEGIN
+        MENUITEM "Remove hips offset      N",   ID_HACKS_REMOVEHIPSOFFSET
+        MENUITEM "Centre                          C", ID_HACK_CENTRE
+        MENUITEM "!Zero check                  Z", ID_PREPARE_
+        MENUITEM SEPARATOR
+        MENUITEM "Set T stance                 S", ID_HACKS_SETT
+        MENUITEM "Remove T stance         D",   ID_HACKS_REMOVETSTANCE
+        MENUITEM SEPARATOR
+        MENUITEM "SL VWR-3783 loop fix   L",    ID_HACK_SLVWR
+    END
+    POPUP "Loop"
+    BEGIN
+        MENUITEM "Mark in",                     ID_LOOPING_MARKIN
+        MENUITEM "Mark out",                    ID_LOOPING_MARKOUT
+        MENUITEM SEPARATOR
+        MENUITEM "Crop",                        ID_LOOPING_CROP
+        MENUITEM "Knit ends",                   ID_LOOPING_KNITENDS
+    END
+    POPUP "Hack"
+    BEGIN
+        MENUITEM "Attempt SL joint naming",     ID_HACKS_RENAMEJOINTS
+        MENUITEM "Attempt retarget to SL",      ID_HACK_ATTEMPTSLBONESIZING
+        MENUITEM SEPARATOR
+        POPUP "Spine"
+        BEGIN
+            MENUITEM "Add abdomen",                 ID_HACKS_ADDABDOMEN
+            MENUITEM "Smooth chest \\ abdomen",     ID_HACK_INTERPOLATECHEST
+            MENUITEM "Swap chest \\ abdomen",       ID_EDIT_SWAPCHEST
+            MENUITEM "Combine chest \\ abdomen",    ID_SPINE_COMBINECHEST
+        END
+        MENUITEM SEPARATOR
+        POPUP "Zero"
+        BEGIN
+            POPUP "Hips Only"
+            BEGIN
+                MENUITEM "Translation",                 ID_HIPS_TRANSLATION
+                MENUITEM "Rotation",                    ID_HIPS_ROTATION
+                MENUITEM "Both",                        ID_HIPS_BOTH
+            END
+            POPUP "Upper Body"
+            BEGIN
+                MENUITEM "Hips (Rotation) and Up",      ID_UPPERBODY_ALLABOVEHIPS
+                MENUITEM "Abdomen and Up",              ID_UPPERBODY_ABDOMENANDUP
+                MENUITEM "Chest and Up",                ID_UPPERBODY_CHESTANDUP
+            END
+            POPUP "Lower Body"
+            BEGIN
+                MENUITEM "Hips (Rotation), Legs and Feet", ID_LOWERBODY_HIPS
+                MENUITEM "Hips (Rotation), Legs, Feet and Abdomen", ID_LOWERBODY_HIPS32849
+            END
+            POPUP "All Except"
+            BEGIN
+                MENUITEM "Right Arm",                   ID_ALLEXCEPT_RIGHTARM
+                MENUITEM "Left Arm",                    ID_ALLEXCEPT_LEFTARM
+                MENUITEM "Right Arm, Neck and Head",    ID_ALLEXCEPT_RIGHTARMANDHEAD
+                MENUITEM "Left Arm, Neck and Head",     ID_ALLEXCEPT_LEFTARMANDHEAD
+                MENUITEM "Right Arm, Chest, Neck and Head", ID_ALLEXCEPT_RIGHTARM32859
+                MENUITEM "Left Arm, Chest, Neck and Head", ID_ALLEXCEPT_LEFTARM32860
+            END
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Square shoulders          [", ID_HACK_SQUARESHOULDERS
+        MENUITEM "Round shoulders           ]", ID_HACK_ROUNDSHOULDERS
+        MENUITEM "Crane neck          Shift+[", ID_HACK_CRANENECKSHIFT
+        MENUITEM "Straighten neck   Shift+]",   ID_HACK_STRAIGHTENNECKSHIFT
+        MENUITEM SEPARATOR
+        MENUITEM "Reverse timeline",            ID_HACK_REVERSETIMELINE
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "Online help",                 ID_HELP_ONLINEHELPFILES
+        MENUITEM "Discussion group",            ID_HELP_BVHACKERGOOGLEGROUP
+        MENUITEM "Donate",                      ID_HELP_FINDER
+        MENUITEM SEPARATOR
+        MENUITEM "About",                       ID_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About davedub's bvhacker"
+END
+
+#endif    // English (United Kingdom) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+LANGUAGE 9, 2
+#pragma code_page(1252)
+#include "res\bvhTweak.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
