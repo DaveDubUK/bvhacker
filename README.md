@@ -9,3 +9,6 @@ I've decided to make bvhacker open source, as there is still a lot of interest i
 
 May 2020 Update: I have added a fix for the file load error "Was the file made using Mac line endings?" and changed that horrible icon.
 
+Project homepage: http://www.bvhacker.com/help.html
+Project discussion group: http://groups.google.com/group/bvhacker
+Project donations: http://www.bvhacker.com/donate.html
