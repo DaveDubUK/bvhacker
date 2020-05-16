@@ -1,28 +1,3 @@
-/*
-	bvhacker - a program for animation previewing and editing
-
-	bvhacker Copyright © 2006 to 2014 David Wooldridge  
-
-		dave@davedub.co.uk
-		http://davedub.co.uk/
-
-	This file is part of bvhacker.
-
-    bvhacker is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    bvhacker is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with bvhacker.  If not, see <http://www.gnu.org/licenses/>.
-
-*/
-
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
 // Used by bvhTweak.rc
@@ -36,6 +11,7 @@
 #define IDB_TEST                        130
 #define IDI_MAINFRAME                   132
 #define IDI_ICON1                       134
+#define IDI_BVHACKER_LOGO               134
 #define IDI_ICON3                       136
 #define IDI_FWD_ICON                    136
 #define IDI_PAUSE_ICON                  137
@@ -254,7 +230,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        153
+#define _APS_NEXT_RESOURCE_VALUE        154
 #define _APS_NEXT_COMMAND_VALUE         32869
 #define _APS_NEXT_CONTROL_VALUE         1111
 #define _APS_NEXT_SYMED_VALUE           101

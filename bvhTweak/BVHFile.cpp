@@ -1,7 +1,7 @@
-/*
+﻿/*
 	bvhacker - a program for animation previewing and editing
 
-	bvhacker Copyright � 2006 to 2014 David Wooldridge  
+	bvhacker Copyright © 2006 to 2014 David Wooldridge  
 
 		dave@davedub.co.uk
 		http://davedub.co.uk/
@@ -736,7 +736,8 @@ bool CBVHFile::ReadLine(CStdioFile* pFile, CString* line)
 		if(!success) return false;
 		*line->TrimRight();
 		*line->TrimLeft();
-		if(line->GetLength()>2048)
+		int lineLength = line->GetLength();
+		if(lineLength > 65536)
 		{
 			AfxMessageBox(_T("Problem with file: was the file saved using Mac line endings?"),MB_ICONSTOP);
 			return false;

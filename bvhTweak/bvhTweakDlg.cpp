@@ -716,7 +716,12 @@ void CbvhTweakDlg::LoadBVHFromLPTSTR(LPTSTR lpFileName)
 			CString sPathName(lpFileName);
 			//CString message = "Path name is "+sPathName+" and is all fucking good!";
 			//AfxMessageBox(message);
-			theApp.m_pBVHFile->LoadBVH(sPathName);
+			if (!(theApp.m_pBVHFile->LoadBVH(sPathName)))
+			{
+				AfxMessageBox(_T("Problem loading file"), MB_ICONSTOP);
+				UnlockApp();
+				return;
+			}
 			theApp.m_pBVHTweaker = new CBVHTweaker(theApp.m_pBVHFile);
 			theApp.m_pBVHQuaterniser = new CBVHQuaterniser(theApp.m_pBVHFile, theApp.m_pBVHTweaker);
 
@@ -750,8 +755,13 @@ void CbvhTweakDlg::LoadBVHFromString(CString sPathName)
 
 			// load the new file 
 			theApp.m_pBVHFile = new CBVHFile();
-			//CString message = "Path name is "+sPathName+" and is all fucking good!";
-			theApp.m_pBVHFile->LoadBVH(sPathName);
+			//CString message = "Path name is "+sPathName+" and is all good!";
+			if (!(theApp.m_pBVHFile->LoadBVH(sPathName)))
+			{
+				AfxMessageBox(_T("Problem loading file"), MB_ICONSTOP);
+				UnlockApp();
+				return;
+			}
 			theApp.m_pBVHTweaker = new CBVHTweaker(theApp.m_pBVHFile);
 			theApp.m_pBVHQuaterniser = new CBVHQuaterniser(theApp.m_pBVHFile, theApp.m_pBVHTweaker);
 
@@ -1095,7 +1105,7 @@ void CbvhTweakDlg::UpdateInterface()
 		m_channelOrderDisplay.SetWindowTextA(wsProperty);
 		
 		// set the hierarchy label
-		wsprintf(wsProperty, _T("Hierarchy: %d"), pJoint->heirarchy);
+		wsprintf(wsProperty, _T("Index, Depth: %d, %d"), pJoint->index, pJoint->heirarchy);
 		m_heirarchyDisplay.SetWindowTextA(wsProperty);
 
 		// set the n channels label

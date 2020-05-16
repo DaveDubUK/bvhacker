@@ -1,7 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bvhTweak", "bvhTweak\bvhTweak.vcxproj", "{8A285833-68D8-43BE-9FE8-DF6AD95E5D14}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "bvhacker", "bvhacker\bvhacker.vdproj", "{25F975CD-7FDB-4E48-8AAE-069AFD0E15BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,8 +23,15 @@ Global
 		{8A285833-68D8-43BE-9FE8-DF6AD95E5D14}.Release|Win32.Build.0 = Release|Win32
 		{8A285833-68D8-43BE-9FE8-DF6AD95E5D14}.Release|x64.ActiveCfg = Release|x64
 		{8A285833-68D8-43BE-9FE8-DF6AD95E5D14}.Release|x64.Build.0 = Release|x64
+		{25F975CD-7FDB-4E48-8AAE-069AFD0E15BE}.Debug|Win32.ActiveCfg = Debug
+		{25F975CD-7FDB-4E48-8AAE-069AFD0E15BE}.Debug|x64.ActiveCfg = Debug
+		{25F975CD-7FDB-4E48-8AAE-069AFD0E15BE}.Release|Win32.ActiveCfg = Release
+		{25F975CD-7FDB-4E48-8AAE-069AFD0E15BE}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {363EC341-2063-45FD-BAB1-09E899C7DD35}
 	EndGlobalSection
 EndGlobal

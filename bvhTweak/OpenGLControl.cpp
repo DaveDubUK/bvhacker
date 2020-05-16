@@ -37,7 +37,7 @@ COpenGLControl::COpenGLControl(void)
 {
 	m_fPosX = 0.0f;		// X position of model in camera view
 	m_fPosY = 0.0f;		// Y position of model in camera view
-	m_fZoom = 102.0f;    // Zoom on model in camera view (mustn't be zero)
+	m_fZoom = 102.0f;   // Zoom on model in camera view (mustn't be zero)
 	m_fRotX = 0.0f;		// Rotation on model in camera view
 	m_fRotY	= 0.0f;		// Rotation on model in camera view
 	m_bIsMaximized = false;
@@ -151,7 +151,7 @@ void COpenGLControl::OnDraw(CDC *pDC)
 {
 }
 
-void COpenGLControl::OnTimer(UINT nIDEvent)
+void COpenGLControl::OnTimer(UINT_PTR nIDEvent)
 {
 	if(!theApp.m_IsLocked) {
 		switch (nIDEvent)
